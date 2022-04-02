@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<div class="home-container">
+  <div class="left-top">
+    <h1><%= @project.name %></h1>
+    <p><%= @project.description %></p>
+  </div>
+  <div class="right">
+    <div class="gradient">
+    <%= image_tag("Light.svg", :alt => "Chat", :class => "img-light") %>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <%= link_to 'Edit', edit_project_path(@project), :class => "btn-secondary" %>
+  <%= link_to 'Open a chat', messages_path(:project_id => @project.id), :class => "btn-primary" %>
+</footer>
+<%= link_to 'Back', projects_path %>

@@ -1,0 +1,97 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+$primary : #356CD7;
+$color-base : #110325;
+$gradient: linear-gradient(114.03deg, rgba(53, 108, 215, 0.2) 8.87%, rgba(0, 0, 0, 0) 96.56%);
+$white : #ffffff;
+$font : 'Poppins';
+*{
+  margin: 0;
+  padding: 0;
+  line-height: 1em;
+}
+.color{
+  color: $primary;
+}
+a{
+  text-decoration: none;
+  &:visited{
+    color: $white;
+  }
+}
+body{
+  background-color: $color-base;
+  color: $white;
+}
+
+header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1em;
+  nav{
+    .username{
+      margin-right: 3em;
+    }
+  }
+}
+
+.btn-primary, .btn-secondary{
+  padding: 1em 2em;
+  border-radius: 10em;
+  text-transform: uppercase;
+  width: fit-content;
+  transition: background-color .3s ease-in-out;
+}
+.btn-primary{
+  background-color: $primary;
+  color: $white;
+  &:hover{
+    background-color: $white;
+    color: $primary;
+  }
+}
+
+.btn-secondary{
+  background-color: $white;
+  color: $primary;
+  &:hover{
+    background-color: $primary;
+    color: $white;
+  }
+  &:visited{
+    color: $primary;
+  }
+  &:visited:hover{
+    color: $white;
+  }
+}
+
+.username{
+  text-transform: uppercase;
+}
+
+footer{
+  position: sticky;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: end;
+  .btn-secondary{
+    margin-right: 2em;
+  }
+}

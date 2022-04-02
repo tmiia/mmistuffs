@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="container">
+  <h1>All the <strong>mmi’s projects</strong></h1>
+  <div class="projects">
+    <% @projects.each do |project| %>
+      <div class="item">
+        <p><span class="type">Name : </span><%= project.name %></p>
+        <p><span class="type">Description : </span><%= project.description %></p>
+        <%= link_to 'Open', project, :class => "btn-secondary btn-item" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<br>
+
+<footer>
+<%= link_to 'New Project', new_project_path, :class => "btn-primary" %>
+</footer>
