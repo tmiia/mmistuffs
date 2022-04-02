@@ -1,33 +1,31 @@
 <p id="notice"><%= notice %></p>
+<div class="message-container">
 
-<h1>Messages</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Text</th>
-      <th>Project</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+  <div class="messages">
     <% @projects.where("id = ?", params[:project_id]).find_each do |project| %>
       <% project.messages.each do |message| %>
-        <tr>
-          <td><%= message.text %></td>
-          <td><%= message.project_id %></td>
-          <td><%= message.user_id %></td>
-          <td><%= link_to 'Show', message %></td>
-          <td><%= link_to 'Edit', edit_message_path(message) %></td>
-          <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
+        <% if message.user_id == current_user.id %>
+          <div class="msg-item-me">
+        <%else%>
+            <div class="msg-item-others">
+        <%end%>
+          <div class="msg"><%= message.text %></div>
+          <div class="info">
+            <% @users.where("id = ?", message.user_id).find_each do |user| %>
+              <span class="send"><%= user.pseudo %></span>
+            <%end%>
+            <span class="date"><%= message.created_at %></span>
+            <% if message.user_id == current_user.id %>
+              <td><%= link_to 'Edit', edit_message_path(message) %></td>
+              <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <%end%>
+          </div>
+        </div>
       <% end %>
     <% end %>
-  </tbody>
-</table>
 
-<br>
-
-<%= render 'form', message: @message %>
+  </div>
+  <div class="msg-form">
+  <%= render 'form', message: @message %>
+  </div>
+</div>

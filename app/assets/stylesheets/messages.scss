@@ -1,3 +1,78 @@
 // Place all the styles related to the messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.message-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  .messages{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 70%;
+    margin-top: 3em;
+    .msg-item-me, .msg-item-others{
+      margin: 2em 0;
+      .msg{
+        border-radius: 25em 30em 30em 10em;
+        min-height: 2em;
+        width: fit-content;
+        min-width: 8em;
+        max-width: 90%;
+        padding: 1em 3em;
+        background-color: #FFF;
+        color: #356CD7;
+      }
+    }
+    .msg-item-me{
+      align-self: flex-end;
+      width: fit-content;
+      .msg{
+        align-self: flex-end;
+        border-radius: 30em 25em 10em 30em;
+      }
+    }
+    .msg-item-others{
+      width: 90%;
+      .msg{
+        border-radius: 25em 30em 30em 10em;
+      }
+    }
+  }
+  .msg-form{
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    background-color: #110325;
+  }
+}
+
+form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .form-inputs{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+    .asso{
+      display: flex;
+      align-items: center;
+      select{
+        background-color: #fff;
+        border-style: none;
+        border-radius: 30em;
+      }
+    }
+    textarea{
+     border-radius: 30em;
+     resize: none;
+     width: 40em;
+     border-style: none;
+     padding: 1em 0.5em;
+     margin-right: 2em;
+    }
+  }
+}
