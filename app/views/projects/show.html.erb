@@ -13,7 +13,9 @@
 </div>
 
 <footer>
-  <%= link_to 'Edit', edit_project_path(@project), :class => "btn-secondary" %>
-  <%= link_to 'Open a chat', messages_path(:project_id => @project.id), :class => "btn-primary" %>
+  <% if @project.user_id == current_user.id %>
+    <%= link_to 'Edit project', edit_project_path(@project), :class => "btn-secondary" %>
+  <%end%>
+  <%= link_to 'Open chat', messages_path(:project_id => @project.id), :class => "btn-primary" %>
 </footer>
 <%= link_to 'Back', projects_path %>
