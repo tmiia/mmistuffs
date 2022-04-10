@@ -13,9 +13,13 @@
 </div>
 
 <footer>
-  <% if @project.user_id == current_user.id %>
-    <%= link_to 'Edit project', edit_project_path(@project), :class => "btn-secondary" %>
-  <%end%>
+  <% if user_signed_in? %>
+    <% if @project.user_id == current_user.id %>
+      <%= link_to 'Edit project', edit_project_path(@project), :class => "btn-secondary" %>
+    <%end%>
+  <%else%>
+    <% controller.redirect_to new_user_session_path, notice: "Login or sign up to access the projects" %>
+  <% end %>
   <%= link_to 'Open chat', messages_path(:project_id => @project.id), :class => "btn-primary" %>
 </footer>
 <%= link_to 'Back', projects_path %>
