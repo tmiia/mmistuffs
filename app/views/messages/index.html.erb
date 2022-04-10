@@ -25,7 +25,10 @@
     <% end %>
 
   </div>
+
   <div class="msg-form">
   <%= render 'form', message: @message %>
   </div>
 </div>
+
+<%= javascript_pack_tag 'messages' %>

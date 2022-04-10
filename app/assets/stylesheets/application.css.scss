@@ -24,6 +24,9 @@ $font : 'Poppins';
   padding: 0;
   line-height: 1em;
 }
+html{
+  scroll-behavior: smooth;
+}
 .color{
   color: $primary;
 }
