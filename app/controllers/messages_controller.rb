@@ -28,7 +28,7 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
-        format.html { redirect_to message_url(@message, ), notice: "Message was successfully created." }
+        format.html { redirect_to :controller => 'messages', :action => 'index', :project_id => @message.project_id }
         format.json { render :show, status: :created, location: @message }
       else
         format.html { render :new, status: :unprocessable_entity }
