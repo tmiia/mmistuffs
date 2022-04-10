@@ -12,6 +12,7 @@
     align-self: center;
     width: 70%;
     margin-top: 3em;
+    margin-bottom: 1em;
     .msg-item-me, .msg-item-others{
       margin: 2em 0;
       .msg{
@@ -41,17 +42,21 @@
     }
   }
   .msg-form{
-    position: sticky;
+    position: fixed;
     bottom: 0;
     left: 0;
+    width: 100%;
     background-color: #110325;
   }
 }
 
-form{
+.form-message{
   display: flex;
   align-items: center;
   justify-content: center;
+  label{
+    display: none;
+  }
   .form-inputs{
     display: flex;
     align-items: center;
@@ -69,7 +74,7 @@ form{
     textarea{
      border-radius: 30em;
      resize: none;
-     width: 40em;
+     width: 70em;
      border-style: none;
      padding: 1em 0.5em;
      margin-right: 2em;

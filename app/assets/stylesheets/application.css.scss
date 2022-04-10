@@ -39,6 +39,7 @@ a{
 body{
   background-color: $color-base;
   color: $white;
+  min-height: 90vh;
 }
 
 header{
@@ -59,6 +60,7 @@ header{
 
 .btn-primary, .btn-secondary{
   padding: 1em 2em;
+  border-style: none;
   border-radius: 10em;
   text-transform: uppercase;
   width: fit-content;
@@ -100,5 +102,42 @@ footer{
   justify-content: end;
   .btn-secondary{
     margin-right: 2em;
+  }
+}
+
+.container-user{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 70vh;
+  a{
+    color: #ffffff;
+  }
+  .form-user{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    .form-inputs{
+      width: 40%;
+      input{
+        width: 100%;
+        border-style: none;
+        padding: 0.5em;
+        margin: 0.5em 0 1em 0;
+        border-radius: 30em;
+      }
+      .input-radio{
+        display: flex;
+        input{
+          align-self: flex-start;
+        }
+      }
+    }
+    .btn-primary{
+      justify-self: flex-start;
+    }
   }
 }
