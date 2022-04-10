@@ -6,8 +6,8 @@
   <div class="form-inputs">
     <%= f.input :text %>
     <div class="asso">
-      <%= f.association :project %>
-      <%= f.association :user %>
+      <%= f.hidden_field 'project_id', :value => params[:project_id] %>
+      <%= f.hidden_field 'user_id', :value => current_user.id %>
     </div>
   </div>
 
