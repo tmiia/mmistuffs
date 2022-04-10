@@ -18,7 +18,7 @@
       <%= link_to 'Edit project', edit_project_path(@project), :class => "btn-secondary" %>
     <%end%>
   <%else%>
-    <% controller.redirect_to new_user_session_path, notice: "Login or sign up to access the projects" %>
+    <% controller.redirect_to new_user_session_path, notice: "Login or sign up to access the project" %>
   <% end %>
   <%= link_to 'Open chat', messages_path(:project_id => @project.id), :class => "btn-primary" %>
 </footer>

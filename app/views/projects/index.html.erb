@@ -17,5 +17,7 @@
 <br>
 
 <footer>
-<%= link_to 'New Project', new_project_path, :class => "btn-primary" %>
+  <% if user_signed_in? %>
+    <%= link_to 'New Project', new_project_path, :class => "btn-primary" %>
+  <%end%>
 </footer>
