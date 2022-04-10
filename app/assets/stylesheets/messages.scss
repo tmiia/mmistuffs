@@ -25,6 +25,14 @@
         background-color: #FFF;
         color: #356CD7;
       }
+      .info{
+        margin-top: 0.5em;
+        .send{
+          font-weight: bold;
+        }
+        font-style: italic;
+        color: #574a6b;
+      }
     }
     .msg-item-me{
       align-self: flex-end;
@@ -79,5 +87,12 @@
      padding: 1em 0.5em;
      margin-right: 2em;
     }
+  }
+}
+.delete{
+  color: #6e1919;
+  font-style: italic;
+  &:hover{
+    color: #460b0b;
   }
 }
